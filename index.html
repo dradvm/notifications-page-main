@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Notifications page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+<body>
+  <div class="noti">
+    <div class="noti__container">
+      <div class="noti__header">
+        <div class="noti__header__title">
+          Notifications
+          <div class="noti__header__count">3</div>
+        </div>
+        <div class="noti__header__mark-all">
+          Mark all as read
+        </div>
+      </div>
+      <div class="noti__list">
+        <a  href = "#" class="noti__list__item active">
+          <img src="./assets/images/avatar-mark-webber.webp" alt="" class="noti__list__item__avt">
+          <div class="noti__list__item__info">
+            <div class="noti__list__item__info__top">
+              <div class="noti__list__item__info__top__name-user">
+                Mark Webber 
+              </div>
+              reacted to your recent post 
+              <div class="noti__post">
+                My first tournament today!
+              </div>
+              <div class="noti__notice__red-tiny"></div>
+            </div>
+            <div class="noti__list__item__info__time">
+              1m ago
+            </div>
+          </div>
+        </a>
+        <a  href = "#" class="noti__list__item active">
+          <img src="./assets/images/avatar-angela-gray.webp" alt="" class="noti__list__item__avt">
+          <div class="noti__list__item__info">
+            <div class="noti__list__item__info__top">
+              <div class="noti__list__item__info__top__name-user">
+                Angela Gray
+              </div>
+              followed you
+              <div class="noti__notice__red-tiny"></div>
+            </div>
+            <div class="noti__list__item__info__time">
+              5m ago
+            </div>
+          </div>
+        </a>
+        <a  href = "#" class="noti__list__item active">
+          <img src="./assets/images/avatar-jacob-thompson.webp" alt="" class="noti__list__item__avt">
+          <div class="noti__list__item__info">
+            <div class="noti__list__item__info__top">
+              <div class="noti__list__item__info__top__name-user">
+                Jacob Thompson
+              </div>
+              has joined your group 
+              <div class="noti__group">
+                Chess Club
+              </div>
+              <div class="noti__notice__red-tiny"></div>
+            </div>
+            <div class="noti__list__item__info__time">
+              1 day ago
+            </div>
+          </div>
+        </a>
+        <a  href = "#" class="noti__list__item">
+          <img src="./assets/images/avatar-rizky-hasanuddin.webp" alt="" class="noti__list__item__avt">
+          <div class="noti__list__item__info">
+            <div class="noti__list__item__info__top">
+              <div class="noti__list__item__info__top__name-user">
+                Rizky Hasanuddin
+              </div>
+              sent you a private message
+            </div>
+            <div class="noti__list__item__info__time">
+              5 days ago
+            </div>
+          </div>
+          <div class="noti__message">
+            Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+            I'm already having lots of fun and improving my game.
+          </div>
+        </a>
+        <a  href = "#" class="noti__list__item">
+          <img src="./assets/images/avatar-kimberly-smith.webp" alt="" class="noti__list__item__avt">
+          <div class="noti__list__item__info">
+            <div class="noti__list__item__info__top">
+              <div class="noti__list__item__info__top__name-user">
+                Kimberly Smith
+              </div>
+              commented on your picture 
+            </div>
+            <div class="noti__list__item__info__time">
+              1 week ago
+            </div>
+            <img src="./assets/images/image-chess.webp" alt="" class="noti__img">
+          </div>
+        </a>
+        <a  href = "#" class="noti__list__item">
+          <img src="./assets/images/avatar-nathan-peterson.webp" alt="" class="noti__list__item__avt">
+          <div class="noti__list__item__info">
+            <div class="noti__list__item__info__top">
+              <div class="noti__list__item__info__top__name-user">
+                Nathan Peterson 
+              </div>
+              reacted to your recent post 
+              <div class="noti__post">
+                5 end-game strategies to increase your win rate
+              </div>
+            </div>
+            <div class="noti__list__item__info__time">
+              2 weeks ago
+            </div>
+          </div>
+        </a>
+        <a  href = "#" class="noti__list__item">
+          <img src="./assets/images/avatar-anna-kim.webp" alt="" class="noti__list__item__avt">
+          <div class="noti__list__item__info">
+            <div class="noti__list__item__info__top">
+              <div class="noti__list__item__info__top__name-user">
+                Anna Kim
+              </div>
+              left the group 
+              <div class="noti__group">
+                Chess Club
+              </div>
+            </div>
+            <div class="noti__list__item__info__time">
+              2 weeks ago
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+   
+  <script>
+    const itemList = document.querySelectorAll(".noti__list__item")
+    const markAll = document.querySelector(".noti__header__mark-all")
+    const numCountItem = document.querySelector(".noti__header__count")
+    function countItems() {
+      numCountItem.innerHTML = document.querySelectorAll(".noti__notice__red-tiny").length
+    }
+    function removeItem(item) {
+      item.classList.remove("active")
+      item.querySelector(".noti__notice__red-tiny").classList.remove("noti__notice__red-tiny")
+    }
+    markAll.onclick = function() {
+      for (const item of itemList) {
+        if (item.classList.contains("active")) {
+          removeItem(item)
+        }
+      }
+      countItems()
+    }
+    for (const item of itemList) {
+      item.addEventListener("click", function() {
+        removeItem(item)
+        countItems()
+      })
+      if (item.querySelector(".noti__img")) {
+        item.querySelector(".noti__list__item__info__top").style.width = "80%"
+      }
+    }
+  </script>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/dradvm">DN</a>.
+  </div>
+</body>
+</html>
