@@ -200,6 +200,9 @@ body {
         margin-left: 16%;
         width: 84%;
     }
+    .noti__img {
+        width: 12%;
+    }
     .noti__list__item__avt {
         width: 15%;
     }
